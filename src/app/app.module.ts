@@ -13,6 +13,9 @@ import { MatSidenavModule } from'@angular/material/sidenav'
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './views/home/home.component';
 import { MatCardModule } from '@angular/material/card';
+import { FuncionariosCrudComponent } from './views/funcionarios-crud/funcionarios-crud.component';
+import { CargosCrudComponent } from './views/cargos-crud/cargos-crud.component';
+import { EmpresasCrudComponent } from './views/empresas-crud/empresas-crud.component';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { MatCardModule } from '@angular/material/card';
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    FuncionariosCrudComponent,
+    CargosCrudComponent,
+    EmpresasCrudComponent
   ],
   imports: [
     BrowserModule,
