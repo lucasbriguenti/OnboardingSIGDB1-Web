@@ -1,1 +1,7 @@
-<p>funcionario-read works!</p>
+<ul>
+    <li *ngFor="let funcionario of funcionarios">
+        {{funcionario.nome}}
+        {{funcionario.cpf}}
+        {{funcionario.dataContratacao}}
+    </li>
+</ul>
