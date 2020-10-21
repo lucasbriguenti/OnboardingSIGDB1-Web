@@ -5,6 +5,7 @@ import { HomeComponent } from './views/home/home.component';
 import { FuncionariosCrudComponent } from './views/funcionarios-crud/funcionarios-crud.component';
 import { CargosCrudComponent } from './views/cargos-crud/cargos-crud.component';
 import { EmpresasCrudComponent } from './views/empresas-crud/empresas-crud.component';
+import { FuncionarioCreateComponent } from './components/funcionario/funcionario-create/funcionario-create.component';
 
 const routes: Routes = [{
   path: "",
@@ -18,6 +19,9 @@ const routes: Routes = [{
 },{
   path: 'empresas',
   component: EmpresasCrudComponent
+},{
+  path: 'funcionarios/create',
+  component: FuncionarioCreateComponent
 }];
 
 @NgModule({

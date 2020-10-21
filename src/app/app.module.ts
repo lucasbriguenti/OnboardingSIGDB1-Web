@@ -16,7 +16,19 @@ import { MatCardModule } from '@angular/material/card';
 import { FuncionariosCrudComponent } from './views/funcionarios-crud/funcionarios-crud.component';
 import { CargosCrudComponent } from './views/cargos-crud/cargos-crud.component';
 import { EmpresasCrudComponent } from './views/empresas-crud/empresas-crud.component';
+import { RedDirective } from './directives/red.directive';
+import { FuncionarioCreateComponent } from './components/funcionario/funcionario-create/funcionario-create.component';
 
+import { MatButtonModule } from '@angular/material/button'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
+
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatNativeDateModule } from '@angular/material/core';
+import { FuncionarioReadComponent } from './components/funcionario/funcionario-read/funcionario-read.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +39,10 @@ import { EmpresasCrudComponent } from './views/empresas-crud/empresas-crud.compo
     HomeComponent,
     FuncionariosCrudComponent,
     CargosCrudComponent,
-    EmpresasCrudComponent
+    EmpresasCrudComponent,
+    RedDirective,
+    FuncionarioCreateComponent,
+    FuncionarioReadComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +51,15 @@ import { EmpresasCrudComponent } from './views/empresas-crud/empresas-crud.compo
     MatToolbarModule, 
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    HttpClientModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule, 
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
