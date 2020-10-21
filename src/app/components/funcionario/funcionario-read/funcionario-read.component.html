@@ -1,7 +1,37 @@
-<ul>
-    <li *ngFor="let funcionario of funcionarios">
-        {{funcionario.nome}}
-        {{funcionario.cpf}}
-        {{funcionario.dataContratacao}}
-    </li>
-</ul>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="funcionarios">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef >Id</th>
+        <td mat-cell *matCellDef="let row">{{row.id}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let row">{{row.nome}}</td>
+      </ng-container>
+
+        <ng-container matColumnDef="cpf">
+            <th mat-header-cell *matHeaderCellDef>CPF</th>
+            <td mat-cell *matCellDef="let row">{{row.cpf | CPF}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="dataContratacao">
+            <th mat-header-cell *matHeaderCellDef>Data da Contratação</th>
+            <td mat-cell *matCellDef="let row">{{row.dataContratacao | date: 'shortDate'}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let row">
+                <button mat-button [matMenuTriggerFor]="menu">Mais opções</button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item>Editar</button>
+                            <button mat-menu-item>Excluir</button>
+                        </mat-menu>
+            </td>
+        </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+  

@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class FuncionarioReadComponent implements OnInit {
 
   funcionarios: Funcionario[]
+  displayedColumns = ['id', 'nome', 'cpf', 'dataContratacao', 'action']
 
   constructor(private service: FuncionarioService) { }
 

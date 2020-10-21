@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +28,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatNativeDateModule } from '@angular/material/core';
-import { FuncionarioReadComponent } from './components/funcionario/funcionario-read/funcionario-read.component'
+import { FuncionarioReadComponent } from './components/funcionario/funcionario-read/funcionario-read.component';
+import { FuncionarioRead2Component } from './components/funcionario/funcionario-read2/funcionario-read2.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort'
+import {MatMenuModule} from '@angular/material/menu';
+
+import localePt from '@angular/common/locales/pt'
+import { registerLocaleData } from '@angular/common';
+import { CPFPipe } from './pipe/cpf/cpf.pipe';
+
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -42,7 +53,9 @@ import { FuncionarioReadComponent } from './components/funcionario/funcionario-r
     EmpresasCrudComponent,
     RedDirective,
     FuncionarioCreateComponent,
-    FuncionarioReadComponent
+    FuncionarioReadComponent,
+    FuncionarioRead2Component,
+    CPFPipe
   ],
   imports: [
     BrowserModule,
@@ -59,9 +72,16 @@ import { FuncionarioReadComponent } from './components/funcionario/funcionario-r
     MatFormFieldModule,
     MatInputModule, 
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatMenuModule
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'pt-BR'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
