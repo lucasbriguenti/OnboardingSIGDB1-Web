@@ -1,3 +1,5 @@
+import { FuncionarioDeleteComponent } from './components/funcionario/funcionario-delete/funcionario-delete.component';
+import { FuncionarioUpdateComponent } from './components/funcionario/funcionario-update/funcionario-update.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -22,6 +24,13 @@ const routes: Routes = [{
 },{
   path: 'funcionarios/create',
   component: FuncionarioCreateComponent
+},
+{
+  path: 'funcionarios/update/:id',
+  component: FuncionarioUpdateComponent
+},{
+  path: 'funcionarios/delete/:id',
+  component: FuncionarioDeleteComponent
 }];
 
 @NgModule({

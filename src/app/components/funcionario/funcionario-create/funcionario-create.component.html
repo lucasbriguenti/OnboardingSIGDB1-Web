@@ -11,6 +11,11 @@
             [(ngModel)]="funcionario.cpf" name="cpf"/>
         </mat-form-field>
 
+        <mat-form-field>
+            <input matInput placeholder="Data de Contratação"
+            [(ngModel)]="funcionario.dataContratacao" name="dataContratacao"/>
+        </mat-form-field>
+
     </form>
     <button mat-raised-button (click)="createFuncionario()" color="primary">Registrar funcionário</button>
     <button mat-raised-button (click)="cancel()">Voltar</button>

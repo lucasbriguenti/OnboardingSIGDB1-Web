@@ -29,7 +29,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatNativeDateModule } from '@angular/material/core';
 import { FuncionarioReadComponent } from './components/funcionario/funcionario-read/funcionario-read.component';
-import { FuncionarioRead2Component } from './components/funcionario/funcionario-read2/funcionario-read2.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort'
@@ -38,6 +37,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import localePt from '@angular/common/locales/pt'
 import { registerLocaleData } from '@angular/common';
 import { CPFPipe } from './pipe/cpf/cpf.pipe';
+import { FuncionarioUpdateComponent } from './components/funcionario/funcionario-update/funcionario-update.component';
+import { FuncionarioDeleteComponent } from './components/funcionario/funcionario-delete/funcionario-delete.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 registerLocaleData(localePt);
 
@@ -54,8 +56,9 @@ registerLocaleData(localePt);
     RedDirective,
     FuncionarioCreateComponent,
     FuncionarioReadComponent,
-    FuncionarioRead2Component,
-    CPFPipe
+    CPFPipe,
+    FuncionarioUpdateComponent,
+    FuncionarioDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +79,8 @@ registerLocaleData(localePt);
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule
   ],
   providers: [{
     provide: LOCALE_ID,
