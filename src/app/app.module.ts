@@ -36,10 +36,14 @@ import {MatMenuModule} from '@angular/material/menu';
 
 import localePt from '@angular/common/locales/pt'
 import { registerLocaleData } from '@angular/common';
-import { CPFPipe } from './pipe/cpf/cpf.pipe';
 import { FuncionarioUpdateComponent } from './components/funcionario/funcionario-update/funcionario-update.component';
 import { FuncionarioDeleteComponent } from './components/funcionario/funcionario-delete/funcionario-delete.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { EmpresaReadComponent } from './components/empresa/empresa-read/empresa-read.component';
+import { NgBrazil } from 'ng-brazil';
+import { TextMaskModule } from 'angular2-text-mask';
+import { EmpresaCreateComponent } from './components/empresa/empresa-create/empresa-create.component';
+import { EmpresaDeleteComponent } from './components/empresa/empresa-delete/empresa-delete.component';
 
 registerLocaleData(localePt);
 
@@ -56,9 +60,11 @@ registerLocaleData(localePt);
     RedDirective,
     FuncionarioCreateComponent,
     FuncionarioReadComponent,
-    CPFPipe,
     FuncionarioUpdateComponent,
-    FuncionarioDeleteComponent
+    FuncionarioDeleteComponent,
+    EmpresaReadComponent,
+    EmpresaCreateComponent,
+    EmpresaDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +86,9 @@ registerLocaleData(localePt);
     MatPaginatorModule,
     MatSortModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    NgBrazil, 
+    TextMaskModule
   ],
   providers: [{
     provide: LOCALE_ID,

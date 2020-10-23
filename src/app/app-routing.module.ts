@@ -1,3 +1,4 @@
+import { EmpresaCreateComponent } from './components/empresa/empresa-create/empresa-create.component';
 import { FuncionarioDeleteComponent } from './components/funcionario/funcionario-delete/funcionario-delete.component';
 import { FuncionarioUpdateComponent } from './components/funcionario/funcionario-update/funcionario-update.component';
 import { NgModule } from '@angular/core';
@@ -31,6 +32,9 @@ const routes: Routes = [{
 },{
   path: 'funcionarios/delete/:id',
   component: FuncionarioDeleteComponent
+},{
+  path: 'empresas/create',
+  component: EmpresaCreateComponent
 }];
 
 @NgModule({
