@@ -5,12 +5,13 @@ import { Empresa } from "./../empresa.model";
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: "app-empresa-delete",
-  templateUrl: "./empresa-delete.component.html",
-  styleUrls: ["./empresa-delete.component.css"],
+  selector: "app-empresa-update",
+  templateUrl: "./empresa-update.component.html",
+  styleUrls: ["./empresa-update.component.css"],
 })
-export class EmpresaDeleteComponent implements OnInit {
+export class EmpresaUpdateComponent implements OnInit {
   empresa: Empresa;
+
   constructor(
     private service: EmpresaService,
     private router: Router,
@@ -19,12 +20,15 @@ export class EmpresaDeleteComponent implements OnInit {
 
   ngOnInit(): void {
     var id = this.route.snapshot.paramMap.get("id");
-    this.service.readById(id).subscribe((empresa) => (this.empresa = empresa));
+    this.service.readById(id).subscribe((empresa) => {
+      this.empresa = empresa;
+      console.log(empresa);
+    });
   }
 
-  deleteEmpresa(): void {
-    this.service.delete(this.empresa.id.toString()).subscribe(() => {
-      this.service.showMessage("Empresa excluida!");
+  updateEmpresa(): void {
+    this.service.update(this.empresa).subscribe(() => {
+      this.service.showMessage("Empresa autalizada com sucesso!");
       this.cancel();
     });
   }

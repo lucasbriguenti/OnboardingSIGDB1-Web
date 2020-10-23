@@ -1,0 +1,27 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="cargos">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef >Id</th>
+        <td mat-cell *matCellDef="let row">{{row.id}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="descricao">
+        <th mat-header-cell *matHeaderCellDef>Descrição</th>
+        <td mat-cell *matCellDef="let row">{{row.descricao}}</td>
+      </ng-container>
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let row">
+                <button mat-button [matMenuTriggerFor]="menu">Mais opções</button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item routerLink="/cargos/update/{{row.id}}">Editar</button>
+                            <button mat-menu-item routerLink="/cargos/delete/{{row.id}}">Excluir</button>
+                        </mat-menu>
+            </td>
+        </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+  

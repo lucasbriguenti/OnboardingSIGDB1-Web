@@ -25,7 +25,6 @@ export class FuncionarioUpdateComponent implements OnInit {
   }
 
   updateFuncionario(): void {
-    console.log(this.funcionario);
     this.service.update(this.funcionario).subscribe(() => {
       this.service.showMessage("Funcionário atualizado com sucesso!");
       this.cancel();

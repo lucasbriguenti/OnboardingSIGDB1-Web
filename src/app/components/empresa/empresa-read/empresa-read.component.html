@@ -25,8 +25,8 @@
             <td mat-cell *matCellDef="let row">
                 <button mat-button [matMenuTriggerFor]="menu">Mais opções</button>
                         <mat-menu #menu="matMenu">
-                            <button mat-menu-item routerLink="/funcionarios/update/{{row.id}}">Editar</button>
-                            <button mat-menu-item routerLink="/funcionarios/delete/{{row.id}}">Excluir</button>
+                            <button mat-menu-item routerLink="/empresas/update/{{row.id}}">Editar</button>
+                            <button mat-menu-item routerLink="/empresas/delete/{{row.id}}">Excluir</button>
                         </mat-menu>
             </td>
         </ng-container>

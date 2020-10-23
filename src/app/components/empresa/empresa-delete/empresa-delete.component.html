@@ -1,1 +1,54 @@
-<p>empresa-delete works!</p>
+<mat-card>
+    <mat-card-title>Excluir Empresa</mat-card-title>
+    <form>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="ID"
+          [value]="empresa.id"
+          name="id"
+          disabled="disabled"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Nome"
+          [value]="empresa.nome"
+          name="nome"
+          disabled="disabled"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="CNPJ"
+          [value]="empresa.cnpj | cnpj"
+          name="cnpj"
+          disabled="disabled"
+        />
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Data de Fundação"
+          [value]="empresa.dataFundacao"
+          name="dataFundacao"
+          disabled="disabled"
+        />
+      </mat-form-field>
+    </form>
+    <button
+      mat-raised-button
+      (click)="deleteEmpresa()"
+      color="warn"
+      mat-dialog-close="true"
+    >
+      Excluir
+    </button>
+    <button mat-raised-button (click)="cancel()">
+      Voltar
+    </button>
+  </mat-card>
+  

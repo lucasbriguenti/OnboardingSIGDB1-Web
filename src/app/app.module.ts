@@ -44,6 +44,11 @@ import { NgBrazil } from 'ng-brazil';
 import { TextMaskModule } from 'angular2-text-mask';
 import { EmpresaCreateComponent } from './components/empresa/empresa-create/empresa-create.component';
 import { EmpresaDeleteComponent } from './components/empresa/empresa-delete/empresa-delete.component';
+import { EmpresaUpdateComponent } from './components/empresa/empresa-update/empresa-update.component';
+import { CargoReadComponent } from './components/cargo/cargo-read/cargo-read.component';
+import { CargoDeleteComponent } from './components/cargo/cargo-delete/cargo-delete.component';
+import { CargoCreateComponent } from './components/cargo/cargo-create/cargo-create.component';
+import { CargoUpdateComponent } from './components/cargo/cargo-update/cargo-update.component';
 
 registerLocaleData(localePt);
 
@@ -64,7 +69,12 @@ registerLocaleData(localePt);
     FuncionarioDeleteComponent,
     EmpresaReadComponent,
     EmpresaCreateComponent,
-    EmpresaDeleteComponent
+    EmpresaDeleteComponent,
+    EmpresaUpdateComponent,
+    CargoReadComponent,
+    CargoDeleteComponent,
+    CargoCreateComponent,
+    CargoUpdateComponent
   ],
   imports: [
     BrowserModule,

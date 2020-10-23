@@ -1,0 +1,35 @@
+<mat-card>
+    <mat-card-title>Alterar Empresa</mat-card-title>
+    <form>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Nome"
+          [(ngModel)]="empresa.nome"
+          name="nome"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="CNPJ"
+          [(ngModel)]="empresa.cnpj"
+          name="cnpj"
+        />
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Data de Fundação"
+          [(ngModel)]="empresa.dataFundacao"
+          name="dataFundacao"
+        />
+      </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="updateEmpresa()" color="primary">
+      Atualizar
+    </button>
+    <button mat-raised-button (click)="cancel()">Voltar</button>
+  </mat-card>
+  
