@@ -9,7 +9,10 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./funcionario-update.component.css"],
 })
 export class FuncionarioUpdateComponent implements OnInit {
-  funcionario: Funcionario;
+  funcionario: Funcionario = {
+    nome: '',
+    cpf: null
+  };
 
   constructor(
     private service: FuncionarioService,

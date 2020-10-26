@@ -49,6 +49,8 @@ import { CargoReadComponent } from './components/cargo/cargo-read/cargo-read.com
 import { CargoDeleteComponent } from './components/cargo/cargo-delete/cargo-delete.component';
 import { CargoCreateComponent } from './components/cargo/cargo-create/cargo-create.component';
 import { CargoUpdateComponent } from './components/cargo/cargo-update/cargo-update.component';
+import { FuncionarioVincularEmpresaComponent } from './components/funcionario/funcionario-vincular-empresa/funcionario-vincular-empresa.component';
+import { MatSelectModule } from '@angular/material/select';
 
 registerLocaleData(localePt);
 
@@ -74,7 +76,8 @@ registerLocaleData(localePt);
     CargoReadComponent,
     CargoDeleteComponent,
     CargoCreateComponent,
-    CargoUpdateComponent
+    CargoUpdateComponent,
+    FuncionarioVincularEmpresaComponent
   ],
   imports: [
     BrowserModule,
@@ -98,7 +101,8 @@ registerLocaleData(localePt);
     MatMenuModule,
     MatDialogModule,
     NgBrazil, 
-    TextMaskModule
+    TextMaskModule,
+    MatSelectModule
   ],
   providers: [{
     provide: LOCALE_ID,

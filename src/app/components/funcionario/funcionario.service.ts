@@ -50,7 +50,14 @@ export class FuncionarioService {
     );
   }
 
-  delete(id: string) : Observable<Funcionario>{
+  delete(id: string): Observable<Funcionario> {
     return this.http.delete<Funcionario>(`${this.baseUrl}/${id}`, httpOptions);
+  }
+
+  vincularEmpresa(funcionario: Funcionario): Observable<Funcionario> {
+    return this.http.put<Funcionario>(
+      `${this.baseUrl}/vincular/${funcionario.id}/empresa/${funcionario.idEmpresa}`,
+      httpOptions
+    );
   }
 }

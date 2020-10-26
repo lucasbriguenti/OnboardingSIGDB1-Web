@@ -1,3 +1,4 @@
+import { FuncionarioVincularEmpresaComponent } from './components/funcionario/funcionario-vincular-empresa/funcionario-vincular-empresa.component';
 import { CargoDeleteComponent } from "./components/cargo/cargo-delete/cargo-delete.component";
 import { CargoUpdateComponent } from "./components/cargo/cargo-update/cargo-update.component";
 import { CargoCreateComponent } from "./components/cargo/cargo-create/cargo-create.component";
@@ -67,7 +68,10 @@ const routes: Routes = [
   {
     path: "cargos/delete/:id",
     component: CargoDeleteComponent,
-  },
+  },{
+    path: 'funcionarios/vincularempresa/:id',
+    component: FuncionarioVincularEmpresaComponent
+  }
 ];
 
 @NgModule({
