@@ -19,13 +19,17 @@
       </mat-form-field>
   
       <mat-form-field>
+        <mat-label>Data de Contratação</mat-label>
         <input
           matInput
-          placeholder="Data de Fundação"
-          [(ngModel)]="empresa.dataFundacao"
+          [matDatepicker]="picker"
           name="dataFundacao"
+          [(ngModel)]="empresa.dataFundacao"
         />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
+      
     </form>
     <button mat-raised-button (click)="updateEmpresa()" color="primary">
       Atualizar

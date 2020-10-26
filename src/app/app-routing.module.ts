@@ -1,3 +1,4 @@
+import { FuncionarioVincularCargoComponent } from './components/funcionario/funcionario-vincular-cargo/funcionario-vincular-cargo.component';
 import { FuncionarioVincularEmpresaComponent } from './components/funcionario/funcionario-vincular-empresa/funcionario-vincular-empresa.component';
 import { CargoDeleteComponent } from "./components/cargo/cargo-delete/cargo-delete.component";
 import { CargoUpdateComponent } from "./components/cargo/cargo-update/cargo-update.component";
@@ -71,6 +72,9 @@ const routes: Routes = [
   },{
     path: 'funcionarios/vincularempresa/:id',
     component: FuncionarioVincularEmpresaComponent
+  },{
+    path: 'funcionarios/vincularcargo/:id',
+    component: FuncionarioVincularCargoComponent
   }
 ];
 

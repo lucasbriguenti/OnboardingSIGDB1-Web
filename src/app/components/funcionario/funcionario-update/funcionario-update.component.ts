@@ -2,6 +2,7 @@ import { Funcionario } from "./../funcionario.model";
 import { ActivatedRoute, Router } from "@angular/router";
 import { FuncionarioService } from "./../funcionario.service";
 import { Component, OnInit } from "@angular/core";
+import { MASKS } from "ng-brazil";
 
 @Component({
   selector: "app-funcionario-update",
@@ -9,9 +10,10 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./funcionario-update.component.css"],
 })
 export class FuncionarioUpdateComponent implements OnInit {
+  public MASKS = MASKS;
   funcionario: Funcionario = {
-    nome: '',
-    cpf: null
+    nome: "",
+    cpf: null,
   };
 
   constructor(

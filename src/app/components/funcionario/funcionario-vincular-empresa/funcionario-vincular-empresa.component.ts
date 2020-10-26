@@ -13,10 +13,10 @@ import { Empresa } from "../../empresa/empresa.model";
 export class FuncionarioVincularEmpresaComponent implements OnInit {
   funcionario: Funcionario = {
     nome: null,
-    cpf: null
+    cpf: null,
+    empresa: null,
   };
   empresas: Empresa[];
-  empresa: Empresa;
   idEmpresa: number;
   constructor(
     private service: FuncionarioService,
@@ -27,9 +27,12 @@ export class FuncionarioVincularEmpresaComponent implements OnInit {
 
   ngOnInit(): void {
     var id = this.route.snapshot.paramMap.get("id");
-    this.service
-      .readById(id)
-      .subscribe((funcionario) => (this.funcionario = funcionario));
+    this.service.readById(id).subscribe((funcionario) => {
+      console.log(funcionario);
+      this.funcionario = funcionario;
+      if (funcionario.empresa != null)
+        this.funcionario.idEmpresa = funcionario.empresa.id;
+    });
     this.empresaService.read().subscribe((empresas) => {
       console.log(empresas);
       this.empresas = empresas;
@@ -40,5 +43,12 @@ export class FuncionarioVincularEmpresaComponent implements OnInit {
     this.router.navigate(["/funcionarios"]);
   }
 
-  vincularFuncionarioEmpresa(): void {}
+  vincularFuncionarioEmpresa(): void {
+    this.service.vincularEmpresa(this.funcionario).subscribe(() => {
+      this.service.showMessage("Vinculado com sucesso!");
+      this.cancel();
+    }, error => {
+      this.service.exibirMsgErro(error);
+    });
+  }
 }

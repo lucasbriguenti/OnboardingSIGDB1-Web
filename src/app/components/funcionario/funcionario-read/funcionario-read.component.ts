@@ -15,7 +15,7 @@ export class FuncionarioReadComponent implements OnInit {
 
   constructor(private service: FuncionarioService, private dialog: MatDialog) {}
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.service.read().subscribe((func) => (this.funcionarios = func));
   }
 

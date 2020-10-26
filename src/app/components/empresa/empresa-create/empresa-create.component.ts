@@ -2,6 +2,7 @@ import { Router } from "@angular/router";
 import { EmpresaService } from "./../empresa.service";
 import { Empresa } from "./../empresa.model";
 import { Component, OnInit } from "@angular/core";
+import { MASKS } from "ng-brazil";
 
 @Component({
   selector: "app-empresa-create",
@@ -9,6 +10,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./empresa-create.component.css"],
 })
 export class EmpresaCreateComponent implements OnInit {
+  public MASKS = MASKS;
   empresa: Empresa = {
     cnpj: null,
     nome: null,

@@ -60,4 +60,12 @@ export class FuncionarioService {
       httpOptions
     );
   }
+
+  exibirMsgErro(error: any): void {
+    var msg = '';
+    error.error.forEach(element => {
+      msg = msg + element.Message + '\n';
+    });
+    this.showMessage(msg);
+  }
 }

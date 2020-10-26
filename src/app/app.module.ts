@@ -51,6 +51,7 @@ import { CargoCreateComponent } from './components/cargo/cargo-create/cargo-crea
 import { CargoUpdateComponent } from './components/cargo/cargo-update/cargo-update.component';
 import { FuncionarioVincularEmpresaComponent } from './components/funcionario/funcionario-vincular-empresa/funcionario-vincular-empresa.component';
 import { MatSelectModule } from '@angular/material/select';
+import { FuncionarioVincularCargoComponent } from './components/funcionario/funcionario-vincular-cargo/funcionario-vincular-cargo.component';
 
 registerLocaleData(localePt);
 
@@ -77,7 +78,8 @@ registerLocaleData(localePt);
     CargoDeleteComponent,
     CargoCreateComponent,
     CargoUpdateComponent,
-    FuncionarioVincularEmpresaComponent
+    FuncionarioVincularEmpresaComponent,
+    FuncionarioVincularCargoComponent
   ],
   imports: [
     BrowserModule,
