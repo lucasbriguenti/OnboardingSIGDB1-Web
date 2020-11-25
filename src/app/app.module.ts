@@ -14,7 +14,6 @@ import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './views/home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { FuncionariosCrudComponent } from './views/funcionarios-crud/funcionarios-crud.component';
-import { CargosCrudComponent } from './views/cargos-crud/cargos-crud.component';
 import { EmpresasCrudComponent } from './views/empresas-crud/empresas-crud.component';
 import { RedDirective } from './directives/red.directive';
 import { FuncionarioCreateComponent } from './components/funcionario/funcionario-create/funcionario-create.component';
@@ -45,13 +44,12 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { EmpresaCreateComponent } from './components/empresa/empresa-create/empresa-create.component';
 import { EmpresaDeleteComponent } from './components/empresa/empresa-delete/empresa-delete.component';
 import { EmpresaUpdateComponent } from './components/empresa/empresa-update/empresa-update.component';
-import { CargoReadComponent } from './components/cargo/cargo-read/cargo-read.component';
-import { CargoDeleteComponent } from './components/cargo/cargo-delete/cargo-delete.component';
-import { CargoCreateComponent } from './components/cargo/cargo-create/cargo-create.component';
-import { CargoUpdateComponent } from './components/cargo/cargo-update/cargo-update.component';
-import { FuncionarioVincularEmpresaComponent } from './components/funcionario/funcionario-vincular-empresa/funcionario-vincular-empresa.component';
 import { MatSelectModule } from '@angular/material/select';
-import { FuncionarioVincularCargoComponent } from './components/funcionario/funcionario-vincular-cargo/funcionario-vincular-cargo.component';
+import { CarroReadComponent } from './components/carro/carro-read/carro-read.component';
+import { CarroUpdateComponent } from './components/carro/carro-update/carro-update.component';
+import { CarroDeleteComponent } from './components/carro/carro-delete/carro-delete.component';
+import { CarroCreateComponent } from './components/carro/carro-create/carro-create.component';
+import { CarrosCrudComponent } from './views/carros-crud/carros-crud.component';
 
 registerLocaleData(localePt);
 
@@ -63,7 +61,6 @@ registerLocaleData(localePt);
     NavComponent,
     HomeComponent,
     FuncionariosCrudComponent,
-    CargosCrudComponent,
     EmpresasCrudComponent,
     RedDirective,
     FuncionarioCreateComponent,
@@ -74,12 +71,11 @@ registerLocaleData(localePt);
     EmpresaCreateComponent,
     EmpresaDeleteComponent,
     EmpresaUpdateComponent,
-    CargoReadComponent,
-    CargoDeleteComponent,
-    CargoCreateComponent,
-    CargoUpdateComponent,
-    FuncionarioVincularEmpresaComponent,
-    FuncionarioVincularCargoComponent
+    CarroReadComponent,
+    CarroUpdateComponent,
+    CarroDeleteComponent,
+    CarroCreateComponent,
+    CarrosCrudComponent
   ],
   imports: [
     BrowserModule,

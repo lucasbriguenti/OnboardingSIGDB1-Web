@@ -1,0 +1,38 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="carros">
+  
+      <ng-container matColumnDef="placa">
+        <th mat-header-cell *matHeaderCellDef>Placa</th>
+        <td mat-cell *matCellDef="let row">{{row.placa | placa}}</td>
+      </ng-container>
+
+        <ng-container matColumnDef="marca">
+            <th mat-header-cell *matHeaderCellDef>Marca</th>
+            <td mat-cell *matCellDef="let row">{{row.marca}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="modelo">
+            <th mat-header-cell *matHeaderCellDef>Modelo</th>
+            <td mat-cell *matCellDef="let row">{{row.modelo}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="kilometragem">
+            <th mat-header-cell *matHeaderCellDef>Kilometragem</th>
+            <td mat-cell *matCellDef="let row">{{row.kilometragem}}</td>
+        </ng-container>
+
+ 
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let row">
+                <button mat-button [matMenuTriggerFor]="menu">Mais opções</button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item routerLink="/carros/update/{{row.id}}">Editar</button>
+                            <button mat-menu-item routerLink="/carros/delete/{{row.id}}">Excluir</button>
+                        </mat-menu>
+            </td>
+        </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

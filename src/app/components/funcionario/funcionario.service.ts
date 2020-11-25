@@ -18,7 +18,7 @@ const httpOptions = {
   providedIn: "root",
 })
 export class FuncionarioService {
-  baseUrl = "https://localhost:44382/api/Funcionario";
+  baseUrl = "https://localhost:5001/api/Funcionario";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
@@ -54,11 +54,7 @@ export class FuncionarioService {
     return this.http.delete<Funcionario>(`${this.baseUrl}/${id}`, httpOptions);
   }
 
-  vincularEmpresa(funcionario: Funcionario): Observable<Funcionario> {
-    return this.http.put<Funcionario>(
-      `${this.baseUrl}/vincular/${funcionario.id}/empresa/${funcionario.idEmpresa}`,
-      httpOptions
-    );
+  vincularEmpresa(funcionario: Funcionario): void{
   }
 
   exibirMsgErro(error: any): void {

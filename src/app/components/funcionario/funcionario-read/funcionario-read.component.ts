@@ -11,7 +11,7 @@ import { MatDialog } from "@angular/material/dialog";
 })
 export class FuncionarioReadComponent implements OnInit {
   funcionarios: Funcionario[];
-  displayedColumns = ["id", "nome", "cpf", "dataContratacao", "action"];
+  displayedColumns = ["id", "nome", "cpf", "action"];
 
   constructor(private service: FuncionarioService, private dialog: MatDialog) {}
 

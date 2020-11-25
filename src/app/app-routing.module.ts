@@ -1,8 +1,3 @@
-import { FuncionarioVincularCargoComponent } from './components/funcionario/funcionario-vincular-cargo/funcionario-vincular-cargo.component';
-import { FuncionarioVincularEmpresaComponent } from './components/funcionario/funcionario-vincular-empresa/funcionario-vincular-empresa.component';
-import { CargoDeleteComponent } from "./components/cargo/cargo-delete/cargo-delete.component";
-import { CargoUpdateComponent } from "./components/cargo/cargo-update/cargo-update.component";
-import { CargoCreateComponent } from "./components/cargo/cargo-create/cargo-create.component";
 import { EmpresaUpdateComponent } from "./components/empresa/empresa-update/empresa-update.component";
 import { EmpresaDeleteComponent } from "./components/empresa/empresa-delete/empresa-delete.component";
 import { EmpresaCreateComponent } from "./components/empresa/empresa-create/empresa-create.component";
@@ -13,9 +8,12 @@ import { Routes, RouterModule } from "@angular/router";
 
 import { HomeComponent } from "./views/home/home.component";
 import { FuncionariosCrudComponent } from "./views/funcionarios-crud/funcionarios-crud.component";
-import { CargosCrudComponent } from "./views/cargos-crud/cargos-crud.component";
 import { EmpresasCrudComponent } from "./views/empresas-crud/empresas-crud.component";
 import { FuncionarioCreateComponent } from "./components/funcionario/funcionario-create/funcionario-create.component";
+import { CarroCreateComponent } from './components/carro/carro-create/carro-create.component';
+import { CarroUpdateComponent } from './components/carro/carro-update/carro-update.component';
+import { CarroDeleteComponent } from './components/carro/carro-delete/carro-delete.component';
+import { CarrosCrudComponent } from './views/carros-crud/carros-crud.component';
 
 const routes: Routes = [
   {
@@ -27,8 +25,8 @@ const routes: Routes = [
     component: FuncionariosCrudComponent,
   },
   {
-    path: "cargos",
-    component: CargosCrudComponent,
+    path: "carros",
+    component: CarrosCrudComponent,
   },
   {
     path: "empresas",
@@ -59,22 +57,16 @@ const routes: Routes = [
     component: EmpresaUpdateComponent,
   },
   {
-    path: "cargos/create",
-    component: CargoCreateComponent,
+    path: "carros/create",
+    component: CarroCreateComponent,
   },
   {
-    path: "cargos/update/:id",
-    component: CargoUpdateComponent,
+    path: "carros/update/:id",
+    component: CarroUpdateComponent,
   },
   {
-    path: "cargos/delete/:id",
-    component: CargoDeleteComponent,
-  },{
-    path: 'funcionarios/vincularempresa/:id',
-    component: FuncionarioVincularEmpresaComponent
-  },{
-    path: 'funcionarios/vincularcargo/:id',
-    component: FuncionarioVincularCargoComponent
+    path: "carros/delete/:id",
+    component: CarroDeleteComponent,
   }
 ];
 

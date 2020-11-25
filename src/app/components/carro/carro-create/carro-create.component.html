@@ -1,0 +1,47 @@
+<mat-card>
+  <mat-card-title>Novo Carro</mat-card-title>
+  <form>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Placa"
+        [(ngModel)]="carro.placa"
+        maxlength=7
+        name="placa"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Marca"
+        [(ngModel)]="carro.marca"
+        name="Marca"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Modelo"
+        [(ngModel)]="carro.modelo"
+        name="Modelo"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+        <input
+          matInput
+          placeholder="Kilometragem"
+          [(ngModel)]="carro.kilometragem"
+          name="Kilometragem"
+          type="number"
+          required
+        />
+      </mat-form-field>
+  </form>
+  <button mat-raised-button (click)="createCarro()" color="primary">
+    Registrar Carro
+  </button>
+  <button mat-raised-button (click)="cancel()">Voltar</button>
+</mat-card>

@@ -15,11 +15,7 @@
             <td mat-cell *matCellDef="let row">{{row.cpf | cpf}}</td>
         </ng-container>
 
-        <ng-container matColumnDef="dataContratacao">
-            <th mat-header-cell *matHeaderCellDef>Data da Contratação</th>
-            <td mat-cell *matCellDef="let row">{{row.dataContratacao | date: 'shortDate'}}</td>
-        </ng-container>
-  
+ 
         <ng-container matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let row">
@@ -27,8 +23,6 @@
                         <mat-menu #menu="matMenu">
                             <button mat-menu-item routerLink="/funcionarios/update/{{row.id}}">Editar</button>
                             <button mat-menu-item routerLink="/funcionarios/delete/{{row.id}}">Excluir</button>
-                            <button mat-menu-item routerLink="/funcionarios/vincularempresa/{{row.id}}">Vincular Empresa</button>
-                            <button mat-menu-item routerLink="/funcionarios/vincularcargo/{{row.id}}">Vincular Cargo</button>
                         </mat-menu>
             </td>
         </ng-container>
