@@ -1,0 +1,37 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="posts">
+  
+      <ng-container matColumnDef="userId">
+        <th mat-header-cell *matHeaderCellDef>ID do Usuário</th>
+        <td mat-cell *matCellDef="let row">{{row.userId}}</td>
+      </ng-container>
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td mat-cell *matCellDef="let row">{{row.id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef>Título</th>
+            <td mat-cell *matCellDef="let row">{{row.title}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="body">
+            <th mat-header-cell *matHeaderCellDef>Corpo</th>
+            <td mat-cell *matCellDef="let row">{{row.body}}</td>
+        </ng-container>
+ 
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let row">
+                <button mat-button [matMenuTriggerFor]="menu">Mais opções</button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item routerLink="/carros/update/{{row.id}}">Editar</button>
+                            <button mat-menu-item routerLink="/carros/delete/{{row.id}}">Excluir</button>
+                        </mat-menu>
+            </td>
+        </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

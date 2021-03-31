@@ -1,6 +1,0 @@
-export interface Empresa {
-    id?: number,
-    nome: string,
-    cnpj: string,
-    dataFundacao?: Date
-}

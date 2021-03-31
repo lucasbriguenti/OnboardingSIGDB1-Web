@@ -1,0 +1,37 @@
+<mat-card>
+    <mat-card-title>Novo Carro</mat-card-title>
+    <form>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="User ID"
+          [(ngModel)]="post.userId"
+          name="User ID"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Título"
+          [(ngModel)]="post.title"
+          name="Título"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <textarea
+          matInput
+          placeholder="Corpo"
+          [(ngModel)]="post.body"
+          name="Corpo"
+          required
+        ></textarea>
+        </mat-form-field>
+         </form>
+    <button mat-raised-button (click)="createPost()" color="primary">
+      Postar
+    </button>
+    <button mat-raised-button (click)="cancel()">Voltar</button>
+  </mat-card>
+  
