@@ -19,7 +19,7 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker'
@@ -43,6 +43,8 @@ import { CarrosCrudComponent } from './views/carros-crud/carros-crud.component';
 import { PostCrudComponent } from './views/post-crud/post-crud.component';
 import { PostReadComponent } from './components/post/post-read/post-read.component';
 import { PostCreateComponent } from './components/post/post-create/post-create.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import { PostCreateBootstrapComponent } from './components/post/post-create-bootstrap/post-create-bootstrap.component';
 
 registerLocaleData(localePt);
 
@@ -61,7 +63,8 @@ registerLocaleData(localePt);
     CarrosCrudComponent,
     PostCrudComponent,
     PostReadComponent,
-    PostCreateComponent
+    PostCreateComponent,
+    PostCreateBootstrapComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +89,9 @@ registerLocaleData(localePt);
     MatDialogModule,
     NgBrazil, 
     TextMaskModule,
-    MatSelectModule
+    MatSelectModule,
+    MatStepperModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: LOCALE_ID,

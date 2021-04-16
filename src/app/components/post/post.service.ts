@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { Post } from './post.model';
+import { User } from './user.model';
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json",
@@ -16,7 +17,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PostService {
-  baseUrl = "https://jsonplaceholder.typicode.com/posts";
+  baseUrl = "https://jsonplaceholder.typicode.com";
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
   showMessage(msg: string): void {
@@ -27,9 +28,12 @@ export class PostService {
     });
   }
   read(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.baseUrl, httpOptions);
+    return this.http.get<Post[]>(`${this.baseUrl}/posts`, httpOptions);
   }
-  create(post: Post): Observable<any> {
-    return this.http.post<any>(this.baseUrl, post, httpOptions);
+  create(post: Post): Observable<Post> {
+    return this.http.post<Post>(`${this.baseUrl}/posts`, post, httpOptions);
+  }
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.baseUrl}/users`, httpOptions);
   }
 }

@@ -1,37 +1,60 @@
 <mat-card>
-    <mat-card-title>Novo Carro</mat-card-title>
-    <form>
-      <mat-form-field>
-        <input
-          matInput
-          placeholder="User ID"
-          [(ngModel)]="post.userId"
-          name="User ID"
-          required
-        />
-      </mat-form-field>
-      <mat-form-field>
-        <input
-          matInput
-          placeholder="Título"
-          [(ngModel)]="post.title"
-          name="Título"
-          required
-        />
-      </mat-form-field>
-      <mat-form-field>
-        <textarea
-          matInput
-          placeholder="Corpo"
-          [(ngModel)]="post.body"
-          name="Corpo"
-          required
-        ></textarea>
-        </mat-form-field>
-         </form>
-    <button mat-raised-button (click)="createPost()" color="primary">
-      Postar
-    </button>
-    <button mat-raised-button (click)="cancel()">Voltar</button>
-  </mat-card>
+    <mat-card-title>Novo Post</mat-card-title>
+    <mat-horizontal-stepper [linear]="true" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Empresa</ng-template>
+              <mat-form-field appearance="fill">
+                <mat-label>Empresa do Usuário</mat-label>
+                <mat-select formControlName="empresaName" required>
+                  <mat-option *ngFor="let company of companys" [value]="company.name">
+                    {{company.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          <div>
+            <button mat-button (click)="cancel()">Voltar</button>
+            <button mat-button matStepperNext (click)="setSelectedCompany()">Avançar</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <h2>Empresa {{getCompanyName()}}</h2>
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Usuário</ng-template>
+              <mat-form-field appearance="fill">
+                <mat-label>Usuário</mat-label>
+                <mat-select formControlName="usuarioId" required>
+                  <mat-option *ngFor="let user of users" [value]="user.id" (click)="validarUsuario()">
+                    {{user.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Voltar</button>
+            <button mat-button matStepperNext (click)="setSelectedUser()">Avançar</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="thirdFormGroup" label="Post">
+        <h2>Usuário {{getUserName()}}</h2>
+        <form [formGroup]="thirdFormGroup">
+          <mat-form-field>
+            <mat-label>Título</mat-label>
+            <input matInput formControlName="titleForm" placeholder="Título" maxlength="40"
+                   required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Corpo</mat-label>
+            <textarea matInput formControlName="bodyForm" placeholder="Corpo" required maxlength="240"></textarea>
+          </mat-form-field>
+          <div>
+            <button mat-button (click)="stepper.reset()">Resetar</button>
+            <button mat-button matStepperPrevious>Voltar</button>
+            <button mat-button (click)="postar()">Postar</button>
+          </div>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+</mat-card>
   

@@ -15,4 +15,7 @@ export class PostCrudComponent implements OnInit {
   abrirCreatePost(): void {
     this.router.navigate(['/post/new']);
   }
+  abrirCreatePostBootstrap(): void {
+    this.router.navigate(['/post/bootstrap/new']);
+  }
 }

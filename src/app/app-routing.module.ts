@@ -8,6 +8,7 @@ import { CarroDeleteComponent } from './components/carro/carro-delete/carro-dele
 import { CarrosCrudComponent } from './views/carros-crud/carros-crud.component';
 import { PostCrudComponent } from "./views/post-crud/post-crud.component";
 import { PostCreateComponent } from "./components/post/post-create/post-create.component";
+import { PostCreateBootstrapComponent } from "./components/post/post-create-bootstrap/post-create-bootstrap.component";
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path:"post/new",
     component: PostCreateComponent
+  },
+  {
+    path:"post/bootstrap/new",
+    component: PostCreateBootstrapComponent
   }
 ];
 
