@@ -24,7 +24,6 @@ export class PostService {
     this.snackBar.open(msg, "X", {
       duration: 3000,
       horizontalPosition: "center",
-      verticalPosition: "top",
     });
   }
   read(): Observable<Post[]> {
